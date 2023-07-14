@@ -41,8 +41,8 @@ printListItems() {
   }
   print("--------");
   print("for loop :");
-  for (var i = 0; i < fruits.length; i++){
-    print("${i+1}-) ${fruits[i]}");
+  for (var i = 0; i < fruits.length; i++) {
+    print("${i + 1}-) ${fruits[i]}");
   }
 }
 
