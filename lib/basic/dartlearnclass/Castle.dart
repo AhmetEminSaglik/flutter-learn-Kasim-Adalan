@@ -1,4 +1,5 @@
-import 'package:dart_demo/dartlearnclass/House.dart';
+
+import 'House.dart';
 
 class Castle extends House {
   int towerNumber;

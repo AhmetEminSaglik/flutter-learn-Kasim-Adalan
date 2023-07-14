@@ -1,13 +1,12 @@
 import 'dart:io';
 import 'dart:math';
 
-import 'package:dart_demo/dartlearnclass/CanSize.dart';
-import 'package:dart_demo/dartlearnclass/Castle.dart';
-import 'package:dart_demo/dartlearnclass/DartModifier.dart';
-import 'package:dart_demo/dartlearnclass/Person.dart';
-import 'package:dart_demo/dartlearnclass/Villa.dart';
-
+import '../dartlearnclass/CanSize.dart';
+import '../dartlearnclass/Castle.dart';
+import '../dartlearnclass/DartModifier.dart';
+import '../dartlearnclass/Person.dart';
 import '../dartlearnclass/House.dart';
+import '../dartlearnclass/Villa.dart';
 
 void main() {
   // print("hello dart");

@@ -1,6 +1,6 @@
 import 'dart:math';
 
-import 'package:dart_demo/dartlearnclass/Student.dart';
+import '../dartlearnclass/Student.dart';
 
 import '../dartlearnclass/StudentDB.dart';
 

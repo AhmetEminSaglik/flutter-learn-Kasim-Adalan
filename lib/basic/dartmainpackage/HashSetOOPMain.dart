@@ -1,7 +1,7 @@
 import 'dart:collection';
 
-import 'package:dart_demo/dartlearnclass/Student.dart';
-import 'package:dart_demo/dartlearnclass/StudentDB.dart';
+import '../dartlearnclass/Student.dart';
+import '../dartlearnclass/StudentDB.dart';
 
 void main() {
   StudentDB studentDB = StudentDB();
