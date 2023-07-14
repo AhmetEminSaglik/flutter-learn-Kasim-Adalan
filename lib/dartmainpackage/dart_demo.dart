@@ -19,9 +19,79 @@ void main() {
   // printName();
   // printPersonData();
   // printDartModifiers();
-  printCanSize(CanSize.Big);
-  printCanSize(CanSize.Small);
+  // printCanSize(CanSize.Big);
+  // printCanSize(CanSize.Small);
+  // printIsCheck();
+  printList();
+  printArray();
+}
 
+void printList() {
+  List<dynamic> list = [];
+  list.add("value");
+  list.add(23);
+  print("list $list");
+
+  List<int> list2 = [10, 20, 30];
+  print("list2 $list2");
+  var list3 = <dynamic>[];
+  list3.add("text data");
+  list3.add(3.12);
+  print("list3 $list3");
+  var list4 = <int>[22, 33, 44];
+  print("list4 $list4");
+}
+
+void printArray() {
+  var numbers = [16, 34, 6];
+  print("numbers: $numbers");
+  var numbers2 = [];
+  numbers2.add(10);
+  numbers2.add(101);
+  numbers2.add(1001);
+  print("numbers2 : $numbers2");
+}
+
+void printIsCheck() {
+  House house = new House(windowNumber: 3);
+  Villa villa = new Villa(windowNumber: 4, hasGarage: true);
+  Castle castle = new Castle(windowNumber: 5, towerNumber: 4);
+
+  if (villa is House) {
+    print("Villa IS House");
+  } else {
+    print("Villa IS NOT House");
+  }
+
+  if (villa is Castle) {
+    print("Villa IS Castle");
+  } else {
+    print("Villa IS NOT Castle");
+  }
+
+  if (castle is House) {
+    print("Castle IS House");
+  } else {
+    print("Castle IS NOT House");
+  }
+
+  if (castle is Villa) {
+    print("Castle IS Villa");
+  } else {
+    print("Castle IS NOT Villa");
+  }
+
+  if (house is Castle) {
+    print("house IS Castle");
+  } else {
+    print("house IS NOT Castle");
+  }
+
+  if (house is Villa) {
+    print("house IS Villa");
+  } else {
+    print("house IS NOT Villa");
+  }
 }
 
 void printCanSize(CanSize canSize) {
