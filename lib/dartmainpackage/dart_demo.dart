@@ -22,8 +22,28 @@ void main() {
   // printCanSize(CanSize.Big);
   // printCanSize(CanSize.Small);
   // printIsCheck();
-  printList();
-  printArray();
+  // printList();
+  // printArray();
+  printListItems();
+}
+
+printListItems() {
+  var fruits = <String>[];
+
+  fruits.add("Strawberry");
+  fruits.add("Banana");
+  fruits.add("Apple");
+  fruits.add("Kiwi");
+  fruits.add("Cherry");
+  print("for each :");
+  for (var tmp in fruits) {
+    print("tmp : $tmp");
+  }
+  print("--------");
+  print("for loop :");
+  for (var i = 0; i < fruits.length; i++){
+    print("${i+1}-) ${fruits[i]}");
+  }
 }
 
 void printList() {
