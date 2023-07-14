@@ -1,8 +1,13 @@
 import 'dart:io';
 import 'dart:math';
 
+import 'package:dart_demo/dartlearnclass/CanSize.dart';
+import 'package:dart_demo/dartlearnclass/Castle.dart';
 import 'package:dart_demo/dartlearnclass/DartModifier.dart';
 import 'package:dart_demo/dartlearnclass/Person.dart';
+import 'package:dart_demo/dartlearnclass/Villa.dart';
+
+import '../dartlearnclass/House.dart';
 
 void main() {
   // print("hello dart");
@@ -13,7 +18,29 @@ void main() {
   // printStaticText();
   // printName();
   // printPersonData();
-  printDartModifiers();
+  // printDartModifiers();
+  printCanSize(CanSize.Big);
+  printCanSize(CanSize.Small);
+
+}
+
+void printCanSize(CanSize canSize) {
+  print("cansize : $canSize");
+  print("cansize : ${canSize.getName(canSize)}");
+
+  switch (canSize) {
+    case CanSize.Small:
+      print(20 * 30);
+      break;
+    case CanSize.Middle:
+      print(30 * 30);
+      break;
+    case CanSize.Big:
+      {
+        print(40 * 30);
+        break;
+      }
+  }
 }
 
 void printDartModifiers() {
