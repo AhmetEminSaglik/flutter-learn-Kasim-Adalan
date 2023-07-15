@@ -48,14 +48,16 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Container(
         color: Colors.black38,
-        child: Column(
-          // mainAxisAlignment: MainAxisAlignment.end,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.end,
           // crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Container(width: 80, height:80, color: Colors.red),
-            const Spacer(flex: 30),
+            Expanded(
+                // flex: 25,
+                child: Container(width: 80, height: 80, color: Colors.red)),
+            // const Spacer(flex: 30),
             Container(width: 50, height: 50, color: Colors.blue),
-            const Spacer(flex: 70),
+            // const Spacer(flex: 70),
             Container(width: 100, height: 100, color: Colors.green),
           ],
         ),
