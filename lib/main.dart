@@ -46,59 +46,31 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
-      body:
-      Container(color: Colors.greenAccent,
-        child: Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Text("Hello"),
-            Container(width: 80,height: 80,color : Colors.red),
-            Container(width: 50,height: 50,color : Colors.blue),
-            Container(width: 100,height: 100,color : Colors.green),
-
-          ],
-        ),
-      ),
-   /*   Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text("Hello"),
-          Container(width: 80,height: 80,color : Colors.red),
-          Container(width: 50,height: 50,color : Colors.blue),
-          Container(width: 100,height: 100,color : Colors.green),
-
-        ],
-      ),*//* Container(
-          margin: const EdgeInsets.all(10.0),
-          padding: const EdgeInsets.only(left: 30.0, top: 10),
-          width: 200,
-          height: 200,
-          child: Text("Hello"),
-          decoration: BoxDecoration(
-              color: Colors.red,
-              border: Border.all(color: Colors.blue, width: 5.0),
-              borderRadius: BorderRadius.circular(15))),*/
-
-      /*Container(
+      body: Align(
+        alignment: Alignment.bottomRight,
+        child: Container(
           color: Colors.greenAccent,
-          child: Column(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            // crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Text("Hello"),
-              Container(width: 80, height: 80, color: Colors.red),
-              Container(width: 50, height: 50, color: Colors.blue),
-              Container(width: 200, height: 200, color: Colors.green),
+              Container(
+                width: 200,
+                height: 200,
+                color: Colors.red,
+                child: const Align(
+                    // alignment: Alignment.bottomCenter
+                    // alignment: Alignment.topCenter
+                    // alignment: Alignment.topLeft
+                    alignment: Alignment.bottomRight,
+                    child: Text("Hello")),
+              ),
+              // Container(width: 50, height: 50, color: Colors.blue),
+              // Container(width: 100, height: 100, color: Colors.green),
             ],
           ),
-        )*/
-      /* Row(
-        children: [
-          Text("Hello"),
-          Container(width: 80,height: 80,color : Colors.red),
-          Container(width: 50,height: 50,color : Colors.blue),
-          Container(width: 100,height: 100,color : Colors.green),
-
-        ],
-      ),*/
+        ),
+      ),
     );
   }
 }
