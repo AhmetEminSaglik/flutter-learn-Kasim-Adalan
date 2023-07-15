@@ -46,7 +46,17 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
-      body: Container(
+      body:
+      Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text("Hello"),
+          Container(width: 80,height: 80,color : Colors.red),
+          Container(width: 50,height: 50,color : Colors.blue),
+          Container(width: 100,height: 100,color : Colors.green),
+
+        ],
+      ),/* Container(
           margin: const EdgeInsets.all(10.0),
           padding: const EdgeInsets.only(left: 30.0, top: 10),
           width: 200,
@@ -55,7 +65,7 @@ class _MyHomePageState extends State<MyHomePage> {
           decoration: BoxDecoration(
               color: Colors.red,
               border: Border.all(color: Colors.blue, width: 5.0),
-              borderRadius: BorderRadius.circular(15))),
+              borderRadius: BorderRadius.circular(15))),*/
 
       /*Container(
           color: Colors.greenAccent,
