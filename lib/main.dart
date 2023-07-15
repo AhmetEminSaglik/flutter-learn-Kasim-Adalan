@@ -27,6 +27,12 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+
+  @override
+  void initState() {// when app page starts, this method is excecuted
+    super.initState();
+    print("-->App is started");
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
