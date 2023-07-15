@@ -46,7 +46,15 @@ class _MyHomePageState extends State<MyHomePage> {
           backgroundColor: Theme.of(context).colorScheme.inversePrimary,
           title: Text(widget.title),
         ),
-        body: Container(
+        body: Stack(
+          children: [
+            Container(width: 100, height: 100, color: Colors.green),
+            Container(width: 80, height: 80, color: Colors.red),
+            Container(width: 50, height: 50, color: Colors.blue),
+            Text("Hello"),
+          ],
+        )
+      /*Container(
           color: Colors.greenAccent,
           child: Column(
             children: [
@@ -56,7 +64,7 @@ class _MyHomePageState extends State<MyHomePage> {
               Container(width: 200, height: 200, color: Colors.green),
             ],
           ),
-        )
+        )*/
         /* Row(
         children: [
           Text("Hello"),
