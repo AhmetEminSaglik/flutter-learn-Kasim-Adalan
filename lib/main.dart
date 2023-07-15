@@ -47,16 +47,16 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Align(
-        alignment: Alignment.bottomRight,
+        alignment: Alignment.center,
         child: Container(
           color: Colors.greenAccent,
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.end,
+            // mainAxisAlignment: MainAxisAlignment.end,
             // crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Container(
-                width: 200,
-                height: 200,
+                width: 50,
+                height: 50,
                 color: Colors.red,
                 child: const Align(
                     // alignment: Alignment.bottomCenter
@@ -65,8 +65,13 @@ class _MyHomePageState extends State<MyHomePage> {
                     alignment: Alignment.bottomRight,
                     child: Text("Hello")),
               ),
-              // Container(width: 50, height: 50, color: Colors.blue),
-              // Container(width: 100, height: 100, color: Colors.green),
+              SizedBox(
+                  width: 75, height: 150, child: Container(color: Colors.grey,child: const Text("Here is added as empty box"))),
+              SizedBox(
+                  width: 120,
+                  height: 120,
+                  child: Container(width: 50, height: 50, color: Colors.blue,child: const Text("Container is resized with SizedBox"),)),
+              Container(width: 100, height: 100, color: Colors.green),
             ],
           ),
         ),
