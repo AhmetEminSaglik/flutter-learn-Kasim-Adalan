@@ -48,6 +48,16 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body:
       Row(
+         crossAxisAlignment: CrossAxisAlignment.end,
+        children: [
+          Text("Hello"),
+          Container(width: 80,height: 80,color : Colors.red),
+          Container(width: 50,height: 50,color : Colors.blue),
+          Container(width: 100,height: 100,color : Colors.green),
+
+        ],
+      ),
+   /*   Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text("Hello"),
@@ -56,7 +66,7 @@ class _MyHomePageState extends State<MyHomePage> {
           Container(width: 100,height: 100,color : Colors.green),
 
         ],
-      ),/* Container(
+      ),*//* Container(
           margin: const EdgeInsets.all(10.0),
           padding: const EdgeInsets.only(left: 30.0, top: 10),
           width: 200,
