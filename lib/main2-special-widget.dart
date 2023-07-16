@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 //https://www.udemy.com/course/flutter-ile-uygulama-gelistirme-kursu-android-ios/learn/lecture/23728414#overview
 // to delete all comment  lines --> ctrl + f -->//.* --> delete all comments
 void main() {
@@ -42,26 +43,52 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title),
-      ),
-      body: Container(
-        color: Colors.black38,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.end,
-          // crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Expanded(
-                // flex: 25,
-                child: Container(width: 80, height: 80, color: Colors.red)),
-            // const Spacer(flex: 30),
-            Container(width: 50, height: 50, color: Colors.blue),
-            // const Spacer(flex: 70),
-            Container(width: 100, height: 100, color: Colors.green),
-          ],
+        appBar: AppBar(
+          backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+          title: Text(widget.title),
         ),
-      ),
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              BlueSquare(),
+              const SizedBox(height: 20),
+              const RedSquare(),
+              const SizedBox(height: 20),
+              CustomText("hello ", 130)
+            ],
+          ),
+        ));
+  }
+}
+
+class BlueSquare extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(width: 50, height: 50, color: Colors.blue);
+  }
+}
+
+class RedSquare extends StatelessWidget {
+  const RedSquare({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(width: 50, height: 50, color: Colors.red);
+  }
+}
+
+class CustomText extends StatelessWidget {
+  String message;
+  double fontSize;
+
+  CustomText(this.message, this.fontSize);
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      message,
+      style: TextStyle(fontSize: fontSize),
     );
   }
 }
