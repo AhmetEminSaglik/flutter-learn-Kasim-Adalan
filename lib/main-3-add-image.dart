@@ -50,7 +50,6 @@ class _MyHomePageState extends State<MyHomePage> {
         body: Column(
           children: [
             Image.asset("images/nature.jpeg"),
-            // Image.asset("images/spacer.png"),
             Text("Nature photo")
           ],
         ));
