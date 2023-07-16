@@ -12,7 +12,6 @@ void main() {
       studentList.where((student) => student.no > 150);
   Iterable<Student> filteredByName =
       studentList.where((student) => student.name.length == 5);
-
   Iterable<Student> filteredByGrade =
       studentList.where((element) => element.grade.contains("3"));
 

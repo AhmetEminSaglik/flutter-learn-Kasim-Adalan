@@ -47,15 +47,18 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body:
-      Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text("Hello"),
-          Container(width: 80,height: 80,color : Colors.red),
-          Container(width: 50,height: 50,color : Colors.blue),
-          Container(width: 100,height: 100,color : Colors.green),
+      Container(
+        color: Colors.tealAccent,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text("Hello"),
+            Container(width: 80,height: 80,color : Colors.red),
+            Container(width: 50,height: 50,color : Colors.blue),
+            Container(width: 100,height: 100,color : Colors.green),
 
-        ],
+          ],
+        ),
       ),/* Container(
           margin: const EdgeInsets.all(10.0),
           padding: const EdgeInsets.only(left: 30.0, top: 10),

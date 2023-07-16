@@ -59,18 +59,27 @@ class _MyHomePageState extends State<MyHomePage> {
                 height: 50,
                 color: Colors.red,
                 child: const Align(
-                  // alignment: Alignment.bottomCenter
-                  // alignment: Alignment.topCenter
-                  // alignment: Alignment.topLeft
+                    // alignment: Alignment.bottomCenter
+                    // alignment: Alignment.topCenter
+                    // alignment: Alignment.topLeft
                     alignment: Alignment.bottomRight,
                     child: Text("Hello")),
               ),
               SizedBox(
-                  width: 75, height: 150, child: Container(color: Colors.grey,child: const Text("Here is added as empty box"))),
+                  width: 75,
+                  height: 150,
+                  child: Container(
+                      color: Colors.grey,
+                      child: const Text("Here is added as empty box"))),
               SizedBox(
                   width: 120,
                   height: 120,
-                  child: Container(width: 50, height: 50, color: Colors.blue,child: const Text("Container is resized with SizedBox"),)),
+                  child: Container(
+                    width: 50,
+                    height: 50,
+                    color: Colors.blue,
+                    child: const Text("Container is resized with SizedBox"),
+                  )),
               Container(width: 100, height: 100, color: Colors.green),
             ],
           ),

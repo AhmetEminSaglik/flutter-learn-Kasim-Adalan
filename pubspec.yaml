@@ -65,6 +65,7 @@ flutter:
     - images/stevejobs@2x.png
     - images/stevejobs@3x.png
     - images/big-image.jpg
+    - images/logo.png
   # assets:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg

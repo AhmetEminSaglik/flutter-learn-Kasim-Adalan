@@ -1,0 +1,6 @@
+1-) SCROLL DOWN
+SingleChildScrollView --> able to scroll down when there is not enough space.
+  body: Center(
+        child: SingleChildScrollView( ...)
+        )
+

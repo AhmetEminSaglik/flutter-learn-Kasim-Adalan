@@ -48,7 +48,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body:
       Container(color: Colors.greenAccent,
-        child: Row(
+        child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
             Text("Hello"),

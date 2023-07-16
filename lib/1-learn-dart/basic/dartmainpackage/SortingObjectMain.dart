@@ -8,7 +8,9 @@ void main() {
   print("Without Sort : ");
   studentDB.printStudentList(studentList);
 
-  Comparator<Student> sort1 = (x, y) => x.no.compareTo(y.no);
+  Comparator<Student> sort1 =
+  (x, y) => x.no.compareTo(y.no);
+
   Comparator<Student> sort2 = (x, y) => x.name.compareTo(y.name);
   Comparator<Student> sort3 = (x, y) => x.grade.compareTo(y.grade);
   studentList.sort(sort1);

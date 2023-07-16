@@ -2,7 +2,6 @@ class Student {
   int no;
   String name;
   String grade;
-
   Student({required this.no, required this.name, required this.grade});
 
   @override
