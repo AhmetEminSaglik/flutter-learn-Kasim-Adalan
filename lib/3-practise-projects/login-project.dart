@@ -1,6 +1,8 @@
+import 'package:dart_demo/3-practise-projects/core/ScreenInfoClass.dart';
 import 'package:flutter/material.dart';
 
 // to delete all comment  lines --> ctrl + f -->//.* --> delete all comments
+//https://www.udemy.com/course/flutter-ile-uygulama-gelistirme-kursu-android-ios/learn/lecture/23728476#overview
 void main() {
   runApp(const MyApp());
 }
@@ -34,54 +36,50 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    var screenInfo = MediaQuery.of(context);
-    final double screenHeight = screenInfo.size.height;
-    final double screenWidth = screenInfo.size.width;
+    ScreenInfoFromMediaQueryData(mediaQueryData: MediaQuery.of(context));
+    // var screenInfo = MediaQuery.of(context);
+    // final double screenHeight = screenInfo.size.height;
+    // final double screenWidth = screenInfo.size.width;
 
-    return Scaffold(
+    return const Scaffold(
       backgroundColor: Colors.deepPurple,
       body: Center(
         child: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Padding(
-                padding: EdgeInsets.only(bottom: screenHeight / 50),
-                child: SizedBox(
-                  width: screenWidth / 4,
-                  // height: screenHeight / 6,
-                  child: _LoginPageLogo(),
-                ),
-              ),
-              _InputTextFieldPadding(
-                  widget: const _UsernameInputTextField(),
-                  screenInfo: screenInfo),
-              _InputTextFieldPadding(
-                  widget: const _PasswordInputTextField(),
-                  screenInfo: screenInfo),
-              _LoginButton(screenInfo: screenInfo),
-              GestureDetector(
-                onTap: () {
-                  print("User needs Help!");
-                },
-                child: Padding(
-                  padding: EdgeInsets.only(top: screenHeight / 25),
-                  child: Text("Help?",
-                      style: TextStyle(
-                        fontSize: screenWidth / 25,
-                        color: Colors.white,
-                      )),
-                ),
-              ),
-              /*TextButton(
-                  onPressed: () {
-                    print("User needs help!");
-                  },
-
-                  child: const Text("Help?")),*/
+              _LoginPageLogo(),
+              _UsernameInputTextField(),
+              _PasswordInputTextField(),
+              _LoginButton(),
+              _CustomGestureDetector(),
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+class _CustomGestureDetector extends StatelessWidget {
+  const _CustomGestureDetector({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+        print("User needs Help!");
+      },
+      child: Padding(
+        padding: EdgeInsets.only(
+            top: ScreenInfoFromMediaQueryData.getScreenHeight() / 25),
+        child: Text("Help?",
+            style: TextStyle(
+              fontSize: ScreenInfoFromMediaQueryData.getScreenWidth() / 25,
+              color: Colors.white,
+            )),
       ),
     );
   }
@@ -92,7 +90,14 @@ class _LoginPageLogo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Image.asset("images/logo.png");
+    return Padding(
+      padding: EdgeInsets.only(
+          bottom: ScreenInfoFromMediaQueryData.getScreenHeight() / 50),
+      child: SizedBox(
+        width: ScreenInfoFromMediaQueryData.getScreenWidth() / 4,
+        child: Image.asset("images/logo.png"),
+      ),
+    );
   }
 }
 
@@ -101,30 +106,36 @@ class _UsernameInputTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const _InputTextField(
-      hint: "Username",
+    return _InputTextFieldPadding(
+      widget: const _InputTextField(
+        hint: "Username",
+      ),
     );
   }
 }
 
 class _InputTextFieldPadding extends StatelessWidget {
   final StatelessWidget widget;
-  final MediaQueryData screenInfo;
-  late final double screenWidth;
-  late final double screenHeight;
 
-  _InputTextFieldPadding(
-      {super.key, required this.widget, required this.screenInfo});
+  // final MediaQueryData screenInfo;
+  // late final double screenWidth;
+  // late final double screenHeight;
+
+  _InputTextFieldPadding({super.key, required this.widget});
 
   @override
   Widget build(BuildContext context) {
-    screenHeight = screenInfo.size.height;
-    screenWidth = screenInfo.size.width;
+    // screenHeight = screenInfo.size.height;
+    // screenWidth = screenInfo.size.width;
     return Padding(
       padding: EdgeInsets.only(
+          /*
           left: screenWidth / 30,
           right: screenWidth / 30,
-          bottom: screenHeight / 30),
+          bottom: screenHeight / 30*/
+          left: ScreenInfoFromMediaQueryData.getScreenWidth() / 30,
+          right: ScreenInfoFromMediaQueryData.getScreenWidth() / 30,
+          bottom: ScreenInfoFromMediaQueryData.getScreenWidth() / 30),
       child: widget,
     );
   }
@@ -135,7 +146,8 @@ class _PasswordInputTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const _InputTextField(hint: "Password");
+    return _InputTextFieldPadding(
+        widget: const _InputTextField(hint: "Password"));
   }
 }
 
@@ -158,19 +170,19 @@ class _InputTextField extends StatelessWidget {
 }
 
 class _LoginButton extends StatelessWidget {
-  final MediaQueryData screenInfo;
-  late final double _screenWidth;
-  late final double _screenHeight;
+  // final MediaQueryData screenInfo;
+  // late final double _screenWidth;
+  // late final double _screenHeight;
 
-  _LoginButton({super.key, required this.screenInfo});
+  const _LoginButton({super.key /*,required this.screenInfo*/});
 
   @override
   Widget build(BuildContext context) {
-    _screenHeight = screenInfo.size.height;
-    _screenWidth = screenInfo.size.width;
+    // _screenHeight = screenInfo.size.height;
+    // _screenWidth = screenInfo.size.width;
     return SizedBox(
-      width: _screenWidth / 1.5,
-      height: _screenHeight / 15,
+      width: ScreenInfoFromMediaQueryData.getScreenWidth() / 1.5,
+      height: ScreenInfoFromMediaQueryData.getScreenHeight() / 15,
       child: ElevatedButton(
           onPressed: () {
             print("login is successfull");
@@ -180,7 +192,10 @@ class _LoginButton extends StatelessWidget {
                   MaterialStateColor.resolveWith((states) => Colors.pink),
               foregroundColor:
                   MaterialStateColor.resolveWith((states) => Colors.white)),
-          child: Text("Login", style: TextStyle(fontSize: _screenWidth / 20))),
+          child: Text("Login",
+              style: TextStyle(
+                  fontSize:
+                      ScreenInfoFromMediaQueryData.getScreenWidth() / 20))),
     );
   }
 }
