@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'PageA.dart';
+import 'Person.dart';
 
 //https://www.udemy.com/course/flutter-ile-uygulama-gelistirme-kursu-android-ios/learn/lecture/23728414#overview
 // to delete all comment  lines --> ctrl + f -->//.* --> delete all comments
@@ -56,14 +57,17 @@ class _HomePage extends State<HomePage> {
             children: [
               ElevatedButton(
                   onPressed: () {
+                    var person = Person(
+                        name: "Ahmet Emin",
+                        age: 25,
+                        height: 1.75,
+                        single: true);
                     Navigator.push(
                         context,
                         MaterialPageRoute(
                             builder: (context) => PageA(
-                                name: "Ahmet Emin",
-                                age: 25,
-                                height: 1.78,
-                                single: true)));
+                                  person: person,
+                                )));
                   },
                   child: Text("Go to Page A")),
             ],

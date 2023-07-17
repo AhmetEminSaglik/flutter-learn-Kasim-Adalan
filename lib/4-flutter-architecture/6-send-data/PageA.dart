@@ -1,18 +1,12 @@
 import 'package:flutter/material.dart';
 
 import 'PageB.dart';
+import 'Person.dart';
 
 class PageA extends StatefulWidget {
-  String name;
-  int age;
-  double height;
-  bool single;
+  Person person;
 
-  PageA(
-      {required this.name,
-      required this.age,
-      required this.height,
-      required this.single});
+  PageA({required this.person});
 
   @override
   State<PageA> createState() => _PageAState();
@@ -36,10 +30,10 @@ class _PageAState extends State<PageA> {
                         MaterialPageRoute(builder: (context) => PageB()));
                   },
                   child: Text("Go to Page B")),
-              Text("Name      : ${widget.name}"),
-              Text("Age          : ${widget.age}"),
-              Text("Height      : ${widget.height}"),
-              Text("Is Single   : ${widget.single}"),
+              Text("Name      : ${widget.person.name}"),
+              Text("Age          : ${widget.person.age}"),
+              Text("Height      : ${widget.person.height}"),
+              Text("Is Single   : ${widget.person.single}"),
             ],
           ),
         ));
