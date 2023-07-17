@@ -4,3 +4,16 @@ SingleChildScrollView --> able to scroll down when there is not enough space.
         child: SingleChildScrollView( ...)
         )
 
+
+2-) When SetState() function is run, the build() is run again function.
+
+3-) Classic Method:
+ -update the variable
+ -assing the updated variable to somewhere
+
+ State  Structor :
+  -update the variable
+  - update whole page
+  - assing the updated variable to somewhere.
+
+4-) To use state, page struct must be statefull
