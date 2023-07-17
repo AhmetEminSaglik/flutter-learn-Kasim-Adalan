@@ -18,6 +18,10 @@ SingleChildScrollView --> able to scroll down when there is not enough space.
 
 4-) To use state, page struct must be statefull
 
-5-) When to use Stateless Widget?
+5-) When To Use Stateless Widget?
 -SetState does not works here
 -Column,Row,Container etc  immutable things are used here.
+
+6-) When To Use Statefull Widget?
+-SetState does work here.
+-Needs any changes, use this widget.
