@@ -1,0 +1,27 @@
+Icons :
+I-) android must be circle, 512*512
+ios must me square, 1024*1024
+
+II-) add following lines to pubspec.yaml
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_launcher_icons: "^0.9.2"
+
+flutter_icons:
+  ios: true
+  android: true
+  image_path: "app_icon/iosicon.png"
+  image_path_android: "app_icon/androidicon.png"
+
+III-) android>local.properties> add following command
+flutter.minSdkVersion=21
+
+
+
+IV-) run following code in terminal
+flutter packages pub run flutter_launcher_icons:main
+
+
+
