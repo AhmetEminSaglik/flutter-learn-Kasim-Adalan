@@ -1,3 +1,4 @@
+import 'PageA.dart';
 import 'package:flutter/material.dart';
 
 // to delete all comment  lines --> ctrl + f -->//.* --> delete all comments
@@ -62,8 +63,6 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
     super.didChangeAppLifecycleState(state);
   }
 
-  int counter = 0;
-
   @override
   Widget build(BuildContext context) {
     print("build method run");
@@ -78,12 +77,9 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
             children: [
               ElevatedButton(
                   onPressed: () {
-                    setState(() {
-                      counter++;
-                      print("Clicked $counter");
-                    });
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => PageA()));
                   },
-                  child: Text("CLICK $counter"))
+                  child: Text("Go Page A"))
             ],
           ),
         ));
