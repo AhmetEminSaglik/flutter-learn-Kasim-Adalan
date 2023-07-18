@@ -28,7 +28,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  bool visible = false;
+  bool visible = true;
 
   @override
   void initState() {
@@ -48,15 +48,21 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Visibility(visible: visible, child: Text("HELLO")),
+            Visibility(
+                visible: true,
+                child: Text(
+                  visible ? "TRUE" : "FALSE",
+                  style: TextStyle(
+                      color: visible ? Colors.blue : Colors.red,
+                      fontSize: visible ? 30 : 50),
+                )),
             ElevatedButton(
                 onPressed: () {
                   setState(() {
                     visible = !visible;
                   });
                 },
-                child:
-                    Text("Change Visibility to ${visible ? "hide" : "show"}")),
+                child: Text("Change Text Situation")),
           ],
         ),
       ),
