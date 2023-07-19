@@ -54,7 +54,7 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ],
       ),
-      floatingActionButton: FloatingActionButton(
+      floatingActionButton: FloatingActionButton.extended(
         onPressed: () {
           try {
             _counter = int.parse(tfController.text);
@@ -63,8 +63,8 @@ class _MyHomePageState extends State<MyHomePage> {
           }
           _increaseCounter();
         },
-        tooltip: "Increase Counter",
-        child: Icon(Icons.add),
+        label: Text("Fab"),
+        icon: Icon(Icons.add),
         backgroundColor: Colors.deepOrange,
         foregroundColor: Colors.white,
       ),
