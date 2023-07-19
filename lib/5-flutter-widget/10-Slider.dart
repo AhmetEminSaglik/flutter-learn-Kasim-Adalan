@@ -28,6 +28,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  double progress = 50.0;
   var tfController = TextEditingController();
 
   @override
@@ -35,12 +36,25 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
         appBar: AppBar(
           backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-          title: Text("Title2"),
+          title: Text("Slider"),
         ),
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: [],
+            children: [
+              Text("Result : ${progress.toInt()}"),
+              Slider(
+                  max: 100,
+                  min: 0,
+                  value: progress,
+                  activeColor: Colors.indigo,
+                  inactiveColor: Colors.red,
+                  onChanged: (double i) {
+                    setState(() {
+                      progress = i;
+                    });
+                  }),
+            ],
           ),
         ));
   }
