@@ -7,7 +7,8 @@ keytool -genkey -v -keystore c:/Users/USER_NAME/key.jks -storetype JKS -keyalg R
 ------------------------------------------------------------------------------------
 1-)
 for me :
-keytool -genkey -v -keystore c:/Users/ahmet/key.jks -storetype JKS -keyalg RSA -keysize 2048 -validity 10000 -alias key
+keytool -genkey -v -keystore C:/Users/ahmet/OneDrive/Desktop/key.jks -storetype JKS -keyalg RSA -keysize 2048 -validity 10000 -alias key
+
 
 ------------------------------------------------------------------------------------
 
