@@ -35,7 +35,7 @@ class _MyHomePageState extends State<MyHomePage> {
   late int minHeight = changeValueRange + 10;
 
   late int maxWidth = 10000;
-  late int maxHeight = 1000;
+  late int maxHeight = 10000;
 
   int increaseValue(int value) {
     return (value + changeValueRange);
