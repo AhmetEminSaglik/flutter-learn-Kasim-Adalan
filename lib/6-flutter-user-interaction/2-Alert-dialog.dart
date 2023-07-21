@@ -29,6 +29,8 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  var tfControl = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -66,8 +68,54 @@ class _MyHomePageState extends State<MyHomePage> {
                         });
                   },
                   child: Text("Basic Alert")),
-              ElevatedButton(onPressed: () {} , child: Text("Basic Alert")),
-              ElevatedButton(onPressed: () {}, child: Text("Basic Alert")),
+              ElevatedButton(
+                child: Text(
+                  "Customized Alert",
+                ),
+                onPressed: () {
+                  showDialog(
+                      context: context,
+                      builder: (BuildContext context) {
+                        return AlertDialog(
+                          title: Text("Header",
+                              style: TextStyle(color: Colors.white)),
+                          content: SizedBox(
+                            height: 80,
+                            child: Column(
+                              children: [
+                                TextField(
+                                  controller: tfControl,
+                                  decoration:
+                                      InputDecoration(labelText: "Data"),
+                                ),
+                              ],
+                            ),
+                          ),
+                          backgroundColor: Colors.blueAccent,
+                          actions: [
+                            TextButton(
+                                onPressed: () {
+                                  Navigator.pop(context);
+                                  print("Selected 'cancel' ");
+                                },
+                                child: Text("Cancel",
+                                    style: TextStyle(color: Colors.white))),
+                            TextButton(
+                              child: Text("Get Data",
+                                  style: TextStyle(color: Colors.white)),
+                              onPressed: () {
+                                String data = tfControl.text;
+                                tfControl.text = "";
+                                print("Data is entered : $data");
+                                Navigator.pop(context);
+                              },
+                            ),
+                          ],
+                        );
+                      });
+                },
+              ),
+              // ElevatedButton(onPressed: () {}, child: Text("Alert")),
             ],
           ),
         ));
