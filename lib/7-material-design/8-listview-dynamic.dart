@@ -43,18 +43,38 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
         appBar: AppBar(
           backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-          title: Text("Title2"),
+          title: Text("Dynamic Listview"),
         ),
         body: ListView.builder(
           itemCount: countries.length,
           itemBuilder: (context, index) {
-            return Card(
-                child: SizedBox(
-              height: 50,
-              child: Row( mainAxisAlignment: MainAxisAlignment.center,
-                children: [Text(countries[index])],
-              ),
-            ));
+            return GestureDetector(
+              onTap: () {
+                print("Click item : ${countries[index]}");
+              },
+              child: Card(
+                  child: SizedBox(
+                height: 50,
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 20.0,right: 20.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(countries[index]),
+                      TextButton(
+                          onPressed: () {
+                            print("Click item : ${countries[index]} by click 'Select Country' Button ");
+
+                          },
+                          child: Text(
+                            "Select Country",
+                            style: TextStyle(color: Colors.red),
+                          ))
+                    ],
+                  ),
+                ),
+              )),
+            );
           },
         ));
   }
