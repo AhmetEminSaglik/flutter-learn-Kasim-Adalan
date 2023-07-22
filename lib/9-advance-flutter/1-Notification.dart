@@ -81,7 +81,9 @@ class _HomePageState extends State<HomePage> {
         "channel Id", "channel Name",
         channelDescription: "Demo channel description",
         priority: Priority.high,
-        importance: Importance.max);
+        importance: Importance.max,
+    // ticker: "ticker"
+    );
 
     var iosNotificationDetail = const DarwinNotificationDetails();
     var notificationDetail = NotificationDetails(

@@ -66,11 +66,12 @@ class _MyHomePageState extends State<MyHomePage> {
   }*/
 
   void parseMovieDataResult() {
-    String data = ' { "success" :1 , "movies":['
-        '{"id":5,"name":"Interstellar","year":"2015", "image": "interstellar.png", "categories":[{"id":3,"name":"science fiction"},{"id":4,"name":"Spaceflight"}],"director":{"id":15,"name":"Christopher Nolan"}},'
+    String data='{ "success" :1 , "movies":[{"id":5,"name":"Interstellar","year":"2015", "image": "interstellar.png", "categories":[{"id":3,"name":"science fiction"},{"id":4,"name":"Spaceflight"}],"director":{"id":15,"name":"Christopher Nolan"}},{"id":7,"name":"The Pianist","year":"2002", "image": "thepianist.png", "categories":[{"id":1,"name":"Drama"}],"director":{"id":16,"name":"Roman Polanski"}},{"id":9,"name":"Starwars","year":"1980", "image": "starwars.png", "categories":[{"id":3,"name":"science fiction"},{"id":4,"name":"Spaceflight"},{"id":7,"name":"Fiction about Telekinesis"}],"director":{"id":15,"name":"Irvin Kershner"}}]}';
+/*    String data = ' { "success" :1 , "movies":['
+        '{"id":5,"name":" Interstellar","year":"2015", "image": "interstellar.png", "categories":[{"id":3,"name":"science fiction"},{"id":4,"name":"Spaceflight"}],"director":{"id":15,"name":"Christopher Nolan"}},'
         '{"id":7,"name":"The Pianist","year":"2002", "image": "thepianist.png", "categories":[{"id":1,"name":"Drama"}],"director":{"id":16,"name":"Roman Polanski"}},'
         '{"id":9,"name":"Starwars","year":"1980", "image": "starwars.png", "categories":[{"id":3,"name":"science fiction"},{"id":4,"name":"Spaceflight"},{"id":7,"name":"Fiction about Telekinesis"}],"director":{"id":15,"name":"Irvin Kershner"}}'
-        ']}';
+        ']}';*/
     var jsonData = json.decode(data);
     var moviesDataResult = MovieDataResult.fromJson(jsonData);
     int succes = moviesDataResult.success;
