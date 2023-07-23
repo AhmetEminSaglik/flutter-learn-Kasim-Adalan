@@ -30,5 +30,11 @@ Future<void> addUser(String name, String phone) async {
   var resp = await http.post(url, body: requestData);
   print("respond : ${resp.body}");
 }
-
+//Post update
+Future<void> updateUser(int userId, String name, String phone) async {
+  Uri url = Uri.parse(".../update/user");
+  var requestData = {"id": userId, "name": name, "phone": phone};
+  var resp = await http.post(url, body: requestData);
+  print("respond : ${resp.body}");
+}
 
