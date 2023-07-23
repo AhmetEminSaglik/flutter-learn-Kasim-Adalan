@@ -15,6 +15,14 @@ Future<List<User>> getUserById(int userId) async {
   return userList;
 }
 
+//Post delete
+Future<void> deleteUser(int userId) async {
+  Uri url = Uri.parse(".../delete/user");
+  var requestData = {"id": userId};
+  var resp = await http.post(url, body: requestData);
+  print("respond : ${resp.body}");
+}
+
 //Post Insert
 Future<void> addUser(String name, String phone) async {
   Uri url = Uri.parse(".../insert/user");
@@ -22,3 +30,5 @@ Future<void> addUser(String name, String phone) async {
   var resp = await http.post(url, body: requestData);
   print("respond : ${resp.body}");
 }
+
+
