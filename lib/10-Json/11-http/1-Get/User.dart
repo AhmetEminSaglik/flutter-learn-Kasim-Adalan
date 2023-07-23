@@ -1,5 +1,5 @@
-import 'package:dart_demo/10-Json/11-http/Address.dart';
-import 'package:dart_demo/10-Json/11-http/Company.dart';
+import 'package:dart_demo/10-Json/11-http/1-Get/Address.dart';
+import 'package:dart_demo/10-Json/11-http/1-Get/Company.dart';
 
 class User {
   int id;
