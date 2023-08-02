@@ -1,5 +1,7 @@
 import 'package:dart_demo/12-State-Management/1-Provider/CounterModel.dart';
+import 'package:dart_demo/12-State-Management/2-Block-cubit/CounterCubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
 
 import 'Page2.dart';
@@ -11,12 +13,16 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp
+
+  ({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MultiProvider(
-      providers: [ChangeNotifierProvider(create: (context) => CounterModel())],
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(create: (context) => CounterCubit()),
+      ],
       child: MaterialApp(
         title: 'Flutter Demo',
         debugShowCheckedModeBanner: false,
@@ -35,18 +41,19 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+          backgroundColor: Theme
+              .of(context)
+              .colorScheme
+              .inversePrimary,
           title: Text("HomePage"),
         ),
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Consumer<CounterModel>(builder: (context, counterModel, child) {
-                return Text(
-                  "${counterModel.readCounter()}",
-                  style: TextStyle(fontSize: 46),
-                );
+              BlocBuilder<CounterCubit, int>(builder: (builder, counter) {
+                return Text("Block-Cubit : $counter",style: TextStyle(fontSize: 36),);
+
               }),
               ElevatedButton(
                   onPressed: () {
