@@ -1,0 +1,1 @@
+Each data must have  class Mode for example CounterModel
