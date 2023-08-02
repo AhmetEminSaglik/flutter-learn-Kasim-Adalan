@@ -61,7 +61,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   },
                   child: Text("Snacakbar Action")),
               ElevatedButton(
-                child: Text("Customized Snacakbar Action (1 sec)"),
+                child: Text("Customized Snacakbar Action (3 sec)"),
                 onPressed: () {
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(
@@ -70,7 +70,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         style: TextStyle(color: Colors.pinkAccent),
                       ),
                       backgroundColor: Colors.white,
-                      duration: Duration(seconds: 1),
+                      duration: Duration(seconds: 3),
                       action: SnackBarAction(
                         label: "TRY AGAIN",
                         textColor: Colors.blue,

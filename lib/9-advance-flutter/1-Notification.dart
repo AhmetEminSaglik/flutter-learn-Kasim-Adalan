@@ -72,7 +72,7 @@ class _HomePageState extends State<HomePage> {
     var notificationDetail = NotificationDetails(
         android: androidNotificationDetail, iOS: iosNotificationDetail);
 
-    await flp.show(0, "demo title", "demo body", notificationDetail,
+    await flp.show(0, "Harpia Sağlık Analizi", "Çalışmalara Tam Gaz Devam Bulut Hocam.", notificationDetail,
         payload: "Payload Content");
   }
 
