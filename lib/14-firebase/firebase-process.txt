@@ -1,0 +1,20 @@
+firebase 
+
+-----------------------------------
+
+-----------------------------------
+Firebase configuration file lib\firebase_options.dart generated successfully with the following Firebase apps:
+
+Platform  Firebase App Id
+android   1:158669560339:android:dbd110d0721dec352e3de6
+ios       1:158669560339:ios:25a4c4de039169142e3de6
+
+
+-----------------------------------
++  Success! Use this token to login on a CI server:
+
+1//09knenoUpp78JCgYIARAAGAkSNwF-L9Ir92NSBzCzPW60zKg29qXLkm1oYB4_-pRVhQ2dudDEvNdj53fpsicdlFLNPjmVFZfZCJo
+
+Example: firebase deploy --token "$FIREBASE_TOKEN"
+
+
