@@ -1,5 +1,5 @@
 import 'package:dart_demo/12-State-Management/1-Provider/CounterModel.dart';
-import 'package:dart_demo/12-State-Management/2-Block-cubit/CounterCubit.dart';
+import 'package:dart_demo/12-State-Management/2-Bloc-cubit/CounterCubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
